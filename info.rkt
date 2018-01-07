@@ -2,4 +2,4 @@
 
 (define version "0.0.1")
 
-(define deps '("polyglot"))
+(define deps '("racket-to"))
