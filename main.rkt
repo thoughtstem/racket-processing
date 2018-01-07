@@ -1,12 +1,9 @@
 #lang racket
 
-;(module reader syntax/module-reader
-;  java-processing/processing-module)
-
 (module reader racket
   (require syntax/strip-context)
   (require racket/syntax)
-  (require java-processing/processing-module)
+  (require racket-processing/processing-module)
  
   (provide (rename-out [literal-read read]
                        [literal-read-syntax read-syntax]))
@@ -19,7 +16,7 @@
     (with-syntax* ([str (format "(begin ~a)" (port->string in))]
                    [stuff (processing-str (read (open-input-string (syntax->datum #'str))))])
        #`(module anything racket
-           (require java-processing/processing-module)
+           (require racket-processing/processing-module)
            (display stuff)
            (processing stuff)
            ))))
