@@ -1,5 +1,8 @@
 #lang racket
 
+(provide processing)
+(require racket-processing/processing-module)
+
 (module reader racket
   (require syntax/strip-context)
   (require racket/syntax)
